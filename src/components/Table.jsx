@@ -5,7 +5,7 @@ const Table = ({ coinsData }) => {
     const [rangeNumber, setRangeNumber] = useState(100);
     const [orderBy, setOrderBy] = useState("");
 
-    const tableHeader = ["Prix", "MarketCap", "Volume", "1h", "1d", "1m", "6m", "1y", "ATH"]
+    const tableHeader = ["Prix", "MarketCap", "Volume", "1h", "1d", "1s", "1m", "6m", "1y", "ATH"]
     
     return (
         <div className="table-container">
