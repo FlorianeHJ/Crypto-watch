@@ -78,7 +78,7 @@ const Table = ({ coinsData }) => {
                     case "ATHreverse":
                         return a.ath_change_percentage - b.ath_change_percentage;
                     default:
-                        null;   
+                        return null;   
                 }               
             })
             .map((coin, index) => (
