@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import TableLine from './TableLine';
 import ToTop from './ToTop';
+import { useSelector } from 'react-redux';
 
 const Table = ({ coinsData }) => {
     const [rangeNumber, setRangeNumber] = useState(100);
     const [orderBy, setOrderBy] = useState("");
+    const showStable = useSelector((state) => state.stableReducer.showStable)
 
     const tableHeader = ["Prix", "MarketCap", "Volume", "1h", "1d", "1s", "1m", "6m", "1y", "ATH"]
     
@@ -32,6 +34,9 @@ const Table = ({ coinsData }) => {
             </ul>
             {coinsData && coinsData
             .slice(0, rangeNumber)
+            .filter((coin) => {
+                if(showStable)
+            })
             .sort((a, b) => {
                 switch (orderBy) {
                     case "Prix":  
